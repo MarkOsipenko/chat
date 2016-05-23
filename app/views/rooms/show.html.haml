@@ -1,6 +1,15 @@
-%h4= "#{@room.name} room"
-- @room.messages.each do |message|
-  %span.text-info
-    = message.user.name
-  = message.body
-  %hr
+.jumbotron.col-md-6
+  %h4= "#{@room.name} room"
+  - @room.messages.each do |message|
+    %span.text-info
+      = message.user.name
+    = message.body
+    .message_time
+      = message.created_at.strftime("%d %b %Y")
+    %hr
+
+.col-md-6
+  %h4 All rooms
+  - @rooms.each do |room|
+    .room
+      = link_to "#{room.name}", user_room_path(current_user, room)

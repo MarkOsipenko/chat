@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_room, only: :show
+  before_action :find_all_rooms, only: :show
   before_action :room_params, only: :create
 
   def show
@@ -16,4 +17,7 @@ class RoomsController < ApplicationController
       params.require(:room).permit(:name, :users, :owner, :messages)
     end
 
+    def find_all_rooms
+      @rooms = Room.all
+    end
 end

@@ -9,4 +9,5 @@
     .my_rooms
       %h2 My rooms
       - current_user.rooms.each do |room|
-        = link_to "#{room.name}", user_room_path(current_user, room)
+        .room
+          = link_to "#{room.name}", user_room_path(current_user, room)
