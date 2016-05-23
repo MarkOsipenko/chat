@@ -7,4 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-User.create(name: "Isaac", email: "isaac.newton@gmail.com" , password: "12345678", password_confirmation: "12345678")
+isaac = User.create(name: "Isaac", email: "isaac.newton@gmail.com" , password: "12345678", password_confirmation: "12345678")
+Message.create(body: "Hi guyz!", user_id: isaac.id)
+Message.create(body: "What news?", user_id: isaac.id)
+
+galileo = User.create(name: "Galilei", email: "galilei.galileo@gmail.com" , password: "12345678", password_confirmation: "12345678")
+Message.create(body: "Hi, I throw apples from tower", user_id: galileo.id)
+
+Message.create(body: "It's was you?", user_id: isaac.id)
+Message.create(body: "I knew it?", user_id: isaac.id)
+
+albert = User.create(name: "Albert", email: "albert.einstein@gmail.com" , password: "12345678", password_confirmation: "12345678")
+Message.create(body: "LOL", user_id: albert.id)
+
+Message.create(body: "Sry", user_id: galileo.id)
+
+nicolaus = User.create(name: "Nicolaus", email: "nicolaus.copernicus@gmail.com" , password: "12345678", password_confirmation: "12345678")
+Message.create(body: "guys,pls, go to private messages", user_id: nicolaus.id)

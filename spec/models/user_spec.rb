@@ -7,7 +7,7 @@ RSpec.describe User, :type => :model do
     let(:dub_valid_user) { create :user, email: "person_1@example.com" }
     let(:up_email)       { create :user, email: "Person3_2@wow.in.ua" }
 
-    context "resrond" do
+    context "respond" do
       subject { valid_user }
       it { is_expected.to respond_to(:name) }
       it { is_expected.to respond_to(:email) }
@@ -37,6 +37,13 @@ RSpec.describe User, :type => :model do
       it { expect{ empty_password }.to raise_error(ActiveRecord::RecordInvalid) }
       it { expect{ mismatch }.to raise_error(ActiveRecord::RecordInvalid) }
     end
+  end
 
+  context "messages" do
+    let!(:user) { create :user }
+    let!(:message)  { create :message,body: "HI", user: user }
+    let!(:message1)  { create :message,body: "Bye", user: user }
+
+    it { expect(user.messages.count).to eq(2) }
   end
 end
