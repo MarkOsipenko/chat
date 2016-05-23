@@ -37,6 +37,13 @@ RSpec.describe User, :type => :model do
       it { expect{ empty_password }.to raise_error(ActiveRecord::RecordInvalid) }
       it { expect{ mismatch }.to raise_error(ActiveRecord::RecordInvalid) }
     end
+  end
 
+  context "messages" do
+    let!(:user) { create :user }
+    let!(:message)  { create :message,body: "HI", user: user }
+    let!(:message1)  { create :message,body: "Bye", user: user }
+
+    it { expect(user.messages.count).to eq(2) }
   end
 end
