@@ -7,7 +7,7 @@ RSpec.describe User, :type => :model do
     let(:dub_valid_user) { create :user, email: "person_1@example.com" }
     let(:up_email)       { create :user, email: "Person3_2@wow.in.ua" }
 
-    context "resrond" do
+    context "respond" do
       subject { valid_user }
       it { is_expected.to respond_to(:name) }
       it { is_expected.to respond_to(:email) }
