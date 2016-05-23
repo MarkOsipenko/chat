@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20160523130237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "owner_id"
-    t.string   "room_name"
+    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|

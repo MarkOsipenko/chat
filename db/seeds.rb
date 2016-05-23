@@ -9,7 +9,7 @@
 
 isaac = User.create(name: "Isaac", email: "isaac.newton@gmail.com" , password: "12345678", password_confirmation: "12345678")
 
-room = Room.create(room_name: "Geeks", owner_id: isaac.id )
+room = Room.create(name: "Geeks", owner_id: isaac.id )
 room.users << isaac
 
 Message.create(body: "Hi guyz!", user_id: isaac.id, room_id: room.id)

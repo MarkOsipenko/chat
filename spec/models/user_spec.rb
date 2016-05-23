@@ -41,8 +41,9 @@ RSpec.describe User, :type => :model do
 
   context "messages" do
     let!(:user) { create :user }
-    let!(:message)  { create :message,body: "HI", user: user }
-    let!(:message1)  { create :message,body: "Bye", user: user }
+    let!(:room) { create :room, owner_id: user.id }
+    let!(:message) { create :message, body: "HI", user: user, room: room }
+    let!(:message1) { create :message, body: "Bye", user: user, room: room }
 
     it { expect(user.messages.count).to eq(2) }
   end

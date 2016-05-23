@@ -1,8 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Message, :type => :model do
-  let(:user) { create :user}
-  let(:message)  { create :message, user: user }
+  let!(:user) { create :user }
+  let!(:room) { create :room, owner_id: user.id }
+  let!(:message) { create :message, user: user, room: room }
 
   context "validates" do
     context "respond" do
@@ -12,8 +13,8 @@ RSpec.describe Message, :type => :model do
     end
 
     context "valid body" do
-      let(:empty_message) { create :message, body: "", user: user }
-      let(:valid_message) { create :message, body: "hello world", user: user }
+      let(:empty_message) { create :message, body: "", user: user, room: room }
+      let(:valid_message) { create :message, body: "hello world", user: user, room: room }
 
       it { expect{ empty_message }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Body can't be blank") }
       it { expect(valid_message).to be_valid }
@@ -25,5 +26,4 @@ RSpec.describe Message, :type => :model do
       it { expect{ empty_user }.to raise_error(ActiveRecord::RecordInvalid) }
     end
   end
-
 end
