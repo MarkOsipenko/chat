@@ -1,0 +1,6 @@
+%h4= "#{@room.name} room"
+- @room.messages.each do |message|
+  %span.text-info
+    = message.user.name
+  = message.body
+  %hr
