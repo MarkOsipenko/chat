@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   validates :email, email: true
   validates :name, presence: true
+
+  has_many :messages
 end
