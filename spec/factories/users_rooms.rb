@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :user_in_room do
+  factory :users_room do
     
   end
 end

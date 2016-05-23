@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe UserInRoom, :type => :model do
+RSpec.describe UsersRoom, :type => :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
