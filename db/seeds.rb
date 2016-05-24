@@ -30,8 +30,13 @@ Message.create(body: "LOL", user_id: albert.id, room_id: room.id)
 
 Message.create(body: "Sry", user_id: galileo.id, room_id: room.id)
 
-nicolaus = User.create(name: "Nicolaus", email: "nicolaus.copernicus@gmail.com" , password: "12345678", password_confirmation: "12345678")
+nicolaus = User.create(name: "Nicolaus", email: "nicolaus.copernicus@gmail.com", password: "12345678", password_confirmation: "12345678")
 room.users << nicolaus
 Message.create(body: "guys,pls, go to private messages", user_id: nicolaus.id, room_id: room.id)
 
+
+room1 = Room.create(name: "We will rock you", owner_id: nicolaus.id )
+room1.users << nicolaus
+
+Message.create(body: "this just my room", user_id: nicolaus.id, room_id: room1.id)
 
