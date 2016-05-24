@@ -36,6 +36,19 @@ RSpec.describe "UserPages", type: :request do
           it { is_expected.to have_content("My rooms") }
           it { is_expected.to have_title("Chat - #{new_user.name}") }
         end
+
+        context "sign out" do
+          it { is_expected.to have_link("Logout") }
+
+          context "click logout" do
+            before { click_link "Logout"}
+            it { is_expected.not_to have_title("Chat - #{new_user.name}")}
+            it { is_expected.to have_title("Chat")}
+            it { is_expected.to have_content("Log in")}
+            it { is_expected.to have_link("Sign in")}
+            it { is_expected.to have_content("Sign up")}
+          end
+        end
       end
     end
   end
