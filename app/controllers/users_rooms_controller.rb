@@ -1,31 +1,31 @@
 class UsersRoomsController < ApplicationController
-  before_action :find_user, only: [:create, :destroy]
-  before_action :find_room, only: :create
+  before_action :find_room, only: [:create]
+  before_action :delete_room, only: [:destroy]
 
   def create
-    @user.rooms << @room
     respond_to do |format|
-      if @user.save
+      if current_user.rooms << @room
+        format.html { redirect_to root_path }
         format.js
       else
-        format.html { redirect_to :back, notice: "not enter to room" }
+        format.html { redirect_to root_path }
         format.js
       end
     end
   end
-  #
-  # def destroy
-  #   @user.rooms.delete(@room)
-  #   respond_to do |format|
-  #    format.html { redirect_to user_rooms(current_user), notice: "not enter to room" }
-  #    format.js
-  #   end
-  # end
+
+  def destroy
+    current_user.rooms.delete(@room)
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
+    end
+  end
 
   protected
 
-    def find_user
-      @user = current_user
+    def delete_room
+      @room = current_user.rooms.find(params[:room_id])
     end
 
     def find_room

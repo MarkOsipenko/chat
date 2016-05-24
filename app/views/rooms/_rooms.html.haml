@@ -1,0 +1,12 @@
+%h4 All rooms
+- rooms.each do |room|
+  .room
+    = link_to "#{room.name}", user_room_path(current_user, room)
+
+    - if !current_user.rooms.exists?(room)
+      = link_to user_room_users_rooms_path(current_user, room), remote: true, method: :post do
+        %span.glyphicon.glyphicon-plus
+
+    - else
+      = link_to user_room_users_room_path(current_user, room, current_user.rooms.find(room)), data: { confirm: "Are you sure?" }, remote: true, method: :delete do
+        %span.glyphicon.glyphicon-minus
