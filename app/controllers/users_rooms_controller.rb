@@ -7,9 +7,6 @@ class UsersRoomsController < ApplicationController
       if current_user.rooms << @room
         format.html { redirect_to root_path }
         format.js
-      else
-        format.html { redirect_to root_path }
-        format.js
       end
     end
   end

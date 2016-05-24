@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "UserPages", type: :request do
+RSpec.describe "Authentication", type: :request do
   subject { page }
 
-  context "signin page" do
+  describe "signin page" do
     before { visit new_user_session_path }
     it { is_expected.to have_button('Log in') }
     it { is_expected.to have_title('Sign in') }

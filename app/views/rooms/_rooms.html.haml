@@ -3,11 +3,13 @@
   .room
 
     - if !current_user.rooms.exists?(room)
-      %p.label.label-success Connect to:
-      = link_to user_room_users_rooms_path(current_user, room), method: :post do
-        = room.name
+      .new_rooms
+        %p.label.label-success Connect to:
+        = link_to user_room_users_rooms_path(current_user, room), method: :post do
+          = room.name
 
     - else
-      %p.label.label-danger Disconnect from:
-      = link_to user_room_users_room_path(current_user, room, current_user.rooms.find(room)), data: { confirm: "Are you sure?" }, method: :delete do
-        = room.name
+      .my_rooms
+        %p.label.label-danger Disconnect from:
+        = link_to user_room_users_room_path(current_user, room, current_user.rooms.find(room)), data: { confirm: "Are you sure?" }, method: :delete do
+          = room.name

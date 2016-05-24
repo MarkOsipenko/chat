@@ -14,5 +14,5 @@
         .room
           = link_to "#{room.name}", user_room_path(current_user, room)
 
-  .col-md-6
+  #all_rooms.col-md-6
     = render 'rooms/rooms', rooms: @all_rooms
