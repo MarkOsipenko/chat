@@ -1,3 +1,27 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat_body {
+  width: 650px;
+  padding: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #E7E7E7;
+
+  .room_name {
+    text-align: center;
+  }
+
+  .media-body {
+    p {
+      display: inline-block;
+    }
+  }
+}
+
+.avatar {
+  img  {
+    border-radius: 25px;
+  }
+}

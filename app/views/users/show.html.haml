@@ -2,10 +2,10 @@
 
 .row.placeholders
   .col-xs-6.col-sm-3.placeholder
-    %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}
+    .avatar
+      = image_tag(current_user.avatar_url) if current_user.avatar?
     %h4= current_user.name
     %span.text-muted= current_user.email
-
 
   .col-xs-6.col-sm-3.placeholder
     .my_rooms
