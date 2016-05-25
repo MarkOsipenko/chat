@@ -5,7 +5,7 @@
 
 
 # load script every time (maybe delete turbolink? )
-$(document).ready ->
+$(document).on 'ready page:load', ->
   $('#chat_content').animate { scrollTop: $('#chat_content').get(0).scrollHeight }, 0
   return
 

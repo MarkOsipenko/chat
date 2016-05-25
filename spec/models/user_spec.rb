@@ -3,7 +3,15 @@ require 'rails_helper'
 RSpec.describe User, :type => :model do
 
   context "validation" do
-    let!(:valid_user) { User.create!(name: "leo", email: "person_1@example.com", password: "blablablabla", password_confirmation: "blablablabla") }
+    let!(:valid_user) do
+       user = User.new(name: "leo", email: "person_1@example.com", password: "blablablabla", password_confirmation: "blablablabla")
+       File.open(Rails.root.join("spec", "support", "avatars", "isaac.jpg"), "r") do |avatar|
+         user.avatar = avatar
+         user.save
+       end
+       user
+     end
+
     let(:dub_valid_user) { create :user, email: "person_1@example.com" }
     let(:up_email)       { create :user, email: "Person3_2@wow.in.ua" }
 

@@ -9,10 +9,7 @@ RSpec.describe "Message Action", type: :request do
 
   describe "message in room" do
     before do
-      visit new_user_session_path
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_button "Log in"
+      authentication(user)
     end
 
     it { is_expected.to have_content("My rooms") }
@@ -23,7 +20,7 @@ RSpec.describe "Message Action", type: :request do
         visit user_room_path(user, room)
       end
 
-      it { is_expected.to have_content("Disconnect from:") }
+      xit { is_expected.to have_content("Disconnect from:") }
       it { is_expected.to have_content("geeks room") }
       it { is_expected.to have_content("Hello world") }
 

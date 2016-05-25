@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capybara'
   gem 'byebug', platform: :mri
   gem 'database_cleaner'
+  gem 'pry-rails'
 end
 
 group :development do
