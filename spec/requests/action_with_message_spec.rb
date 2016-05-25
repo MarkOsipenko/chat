@@ -27,18 +27,18 @@ RSpec.describe "Message Action", type: :request do
       it { is_expected.to have_content("geeks room") }
       it { is_expected.to have_content("Hello world") }
 
-      context "create message" do
+      context "send" do
         before { fill_in "write your message", with: "Goodbye cruel world" }
-        it { expect{ click_button "create message" }.to change(Message, :count).by(1) }
+        it { expect{ click_button "send" }.to change(Message, :count).by(1) }
 
         context "valid" do
-          before { click_button "create message" }
+          before { click_button "send" }
           it { is_expected.to have_content("Goodbye cruel world") }
         end
 
         context "invalid" do
           before { fill_in "write your message", with: "" }
-          it { expect{ click_button "create message" }.to change(Message, :count).by(0) }
+          it { expect{ click_button "send" }.to change(Message, :count).by(0) }
           it { is_expected.not_to have_content("Goodbye cruel world") }
         end
       end
