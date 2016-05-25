@@ -1,4 +1,4 @@
 .new_message
   = form_for([user, room, message]) do |f|
-    = f.text_area :body, placeholder: "write your message"
+    = f.text_area :body, placeholder: "write your message", class: "write-message"
     = f.submit "send", class: "btn btn-primary btn-new-task grad-green send-message"
