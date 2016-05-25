@@ -3,5 +3,7 @@
   %h4= "#{@room.name} room"
   = render 'messages/messages_in_room', room: @room
 
+  = render 'messages/new_message', user: current_user, room: @room, message: @room.messages.build
+
 .col-md-6
-  = render 'rooms/rooms', rooms: @rooms
+  = render 'rooms/rooms', user: current_user, rooms: @rooms
