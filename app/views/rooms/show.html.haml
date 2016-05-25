@@ -1,6 +1,7 @@
 - title("#{current_user.name} #{@room.name} room")
 .chat_body
-  %h4.room_name= "#{@room.name} room"
-  = render 'messages/messages_in_room', room: @room
+  .chat_content
+    %h4.room_name= "#{@room.name} room"
+    = render 'messages/messages_in_room', room: @room
 
   = render 'messages/new_message', user: current_user, room: @room, message: @room.messages.build
