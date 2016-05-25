@@ -1,6 +1,10 @@
-%span.text-info
-  = message.user.name
-= message.body
-.message_time
-  = message.created_at.strftime("%d %b %Y")
-%hr
+.media
+  .media-left
+    .avatar.small_avatar
+      = image_tag(message.user.avatar.url, class: "media-object")
+    -# %img{:alt => "...", :src => "..."}
+  .media-body
+    %p= message.body
+
+    .message_time
+      = message.created_at.strftime("%d %b %Y")
