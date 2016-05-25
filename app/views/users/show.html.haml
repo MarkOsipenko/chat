@@ -1,3 +1,5 @@
+- title(current_user.name)
+
 .row.placeholders
   .col-xs-6.col-sm-3.placeholder
     %img.img-responsive{:alt => "Generic placeholder thumbnail", :height => "200", :src => "data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==", :width => "200"}
@@ -11,3 +13,8 @@
       - current_user.rooms.each do |room|
         .room
           = link_to "#{room.name}", user_room_path(current_user, room)
+
+      = render 'rooms/new_room', user: current_user, room: current_user.rooms.build, action: "Room name", button: "Add room"
+
+  #all_rooms.col-md-6
+    = render 'rooms/rooms', rooms: @all_rooms
