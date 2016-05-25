@@ -1,14 +1,9 @@
 - title("#{current_user.name} #{@room.name} room")
 .jumbotron.col-md-6
   %h4= "#{@room.name} room"
-  - @room.messages.each do |message|
-    %span.text-info
-      = message.user.name
-    = message.body
-    .message_time
-      = message.created_at.strftime("%d %b %Y")
-    %hr
+  = render 'messages/messages_in_room', room: @room
+
+  = render 'messages/new_message', user: current_user, room: @room, message: @room.messages.build
 
 .col-md-6
-  = render 'rooms/rooms', rooms: @rooms
-
+  = render 'rooms/rooms', user: current_user, rooms: @rooms
