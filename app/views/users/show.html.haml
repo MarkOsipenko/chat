@@ -14,5 +14,7 @@
         .room
           = link_to "#{room.name}", user_room_path(current_user, room)
 
+      = render 'rooms/new_room', user: current_user, room: current_user.rooms.build, action: "Room name", button: "Add room"
+
   #all_rooms.col-md-6
     = render 'rooms/rooms', rooms: @all_rooms
