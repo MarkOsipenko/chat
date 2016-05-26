@@ -7,12 +7,14 @@
     %h4= current_user.name
     %span.text-muted= current_user.email
 
+
   .col-sm-6.placeholder
     .my_rooms
       %h4 My rooms
-      - current_user.rooms.each do |room|
-        .room
-          = link_to "#{room.name}", user_room_path(current_user, room)
+      #my_rooms
+        - current_user.rooms.each do |room|
+          .room
+          = render 'users/my_room', user: current_user, room: room 
 
       = render 'rooms/new_room', user: current_user, room: current_user.rooms.build, action: "Room name", button: "Add room"
 

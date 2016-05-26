@@ -5,8 +5,7 @@
     - if !current_user.rooms.exists?(room)
       .new_rooms
         %p.label.label-success Connect to:
-        = link_to user_room_users_rooms_path(current_user, room), method: :post do
-          = room.name
+        = render 'users/room', user: current_user, room: room
 
     - else
       .rooms

@@ -1,5 +1,5 @@
 .input-group
-  = form_for([user, room]) do |f|
+  = form_for([user, room], remote: true ) do |f|
     = f.text_field :name, placeholder: "#{action}", class: "form-control"
     .input-group-btn
       = f.submit "#{button}", class: "btn btn-primary btn-new-room"
