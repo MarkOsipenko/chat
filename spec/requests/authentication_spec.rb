@@ -39,7 +39,7 @@ RSpec.describe "Authentication", type: :request do
             before { click_link "Logout"}
             it { is_expected.not_to have_title("Chat - #{new_user.name}")}
             it { is_expected.to have_title("Chat")}
-            it { is_expected.to have_content("Log in")}
+            it { is_expected.to have_content("Please sign in")}
             it { is_expected.to have_link("Sign in")}
             it { is_expected.to have_content("Sign up")}
           end

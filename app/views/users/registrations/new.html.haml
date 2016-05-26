@@ -10,22 +10,22 @@
   .field
     = f.label :name, class: "sr-only"
     %br/
-    = f.text_field :name, autofocus: true, class: "form-control", id: "inputEmail",  placeholder: "Email"
+    = f.text_field :name, autofocus: true, class: "form-control", id: "inputEmail",  placeholder: "Name"
   .field
     = f.label :email, class: "sr-only"
     %br/
-    = f.email_field :email, autofocus: true, class: "form-control", id: "inputPassword", placeholder: "Password"
+    = f.email_field :email, autofocus: true, class: "form-control", id: "inputPassword", placeholder: "Email"
   .field
     = f.label :password, class: "sr-only"
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password confirmation"
+    = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
   .field
     = f.label :password_confirmation, class: "sr-only"
     %br/
-    = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Current password"
+    = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Password confirmation"
   .actions
     = f.submit "Sign up", id: "sign_up", class: "btn btn-lg btn-primary btn-block"
 -# = render "users/shared/links"

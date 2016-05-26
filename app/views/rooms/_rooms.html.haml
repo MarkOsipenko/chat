@@ -9,7 +9,7 @@
           = room.name
 
     - else
-      .my_rooms
+      .rooms
         %p.label.label-danger Disconnect from:
         = link_to user_room_users_room_path(current_user, room, current_user.rooms.find(room)), data: { confirm: "Are you sure?" }, method: :delete do
           = room.name

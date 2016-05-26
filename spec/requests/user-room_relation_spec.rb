@@ -21,7 +21,7 @@ RSpec.describe "User in rooms", type: :request do
 
         # check modal window
         context "disconect from room" do
-          before { first('.my_rooms > a').click }
+          before { first('.rooms > a').click }
           it { is_expected.not_to have_content("Disconnect from:")}
           it { expect(find(".new_rooms")).to have_link(harrys_room.name) }
         end

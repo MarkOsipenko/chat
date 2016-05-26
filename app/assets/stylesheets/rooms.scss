@@ -4,3 +4,21 @@
 .message_time {
   float: right;
 }
+
+.my_rooms {
+  border-left: 1px solid #CDC8C8;
+  border-right: 1px solid #CDC8C8;
+  padding: 15px;
+  .input-group {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .form-control {
+      height: 30px;
+      width: 200px;
+    }
+
+    .btn-new-room {
+      height: 30px;
+    }
+  }
+}
