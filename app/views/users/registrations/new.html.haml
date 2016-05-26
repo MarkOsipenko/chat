@@ -1,30 +1,47 @@
 - title("Sign up")
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true}) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {multipart: true, class: "form-signin"}) do |f|
+  %h2.please_sign_up Please Sign up
   = devise_error_messages!
   .field
+    %em (choose avatar)
     = f.label :avatar do
       = f.file_field :avatar
       = f.hidden_field :avatar_cache
   .field
-    = f.label :name
+    = f.label :name, class: "sr-only"
     %br/
-    = f.text_field :name, autofocus: true
+    = f.text_field :name, autofocus: true, class: "form-control", id: "inputEmail",  placeholder: "Email"
   .field
-    = f.label :email
+    = f.label :email, class: "sr-only"
     %br/
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, autofocus: true, class: "form-control", id: "inputPassword", placeholder: "Password"
   .field
-    = f.label :password
+    = f.label :password, class: "sr-only"
     - if @minimum_password_length
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "off"
+    = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password confirmation"
   .field
-    = f.label :password_confirmation
+    = f.label :password_confirmation, class: "sr-only"
     %br/
-    = f.password_field :password_confirmation, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Current password"
   .actions
-    = f.submit "Sign up", id: "sign_up"
-= render "users/shared/links"
+    = f.submit "Sign up", id: "sign_up", class: "btn btn-lg btn-primary btn-block"
+-# = render "users/shared/links"
+
+
+
+
+-# = form_for( resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f|
+-#   %h2.form-signin-heading Please sign in
+-#   .field
+-#     = f.label :email, class: "sr-only"
+-#     %br/
+-#     = f.email_field :email, autofocus: true, class: "form-control", id: "inputEmail",  placeholder: "Email"
+-#   .field
+-#     = f.label :password, class: "sr-only"
+-#     %br/
+-#     = f.password_field :password, autocomplete: "off", class: "form-control", id: "inputPassword", placeholder: "Password"
+-#   .actions
+-#     = f.submit "Log in", class: "btn btn-lg btn-primary btn-block"

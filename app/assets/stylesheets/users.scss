@@ -32,3 +32,23 @@
     border-radius: 25px;
   }
 }
+
+.form-signin {
+  max-width: 300px;
+  // text-align: left;
+  margin-right: auto;
+  margin-left: auto;
+
+  .btn {
+    float: right;
+    display: inline-block;
+    margin-top: 20px;
+    width: 100px !important;
+    height: 40px !important;
+    padding: 1px 6px ;
+  }
+}
+
+.please_sign_up {
+  margin-bottom: 25px;
+}

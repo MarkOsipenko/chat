@@ -1,19 +1,14 @@
 - title("Sign in")
 
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+= form_for( resource, as: resource_name, url: session_path(resource_name), html: { class: "form-signin" }) do |f|
+  %h2.form-signin-heading Please sign in
   .field
-    = f.label :email
+    = f.label :email, class: "sr-only"
     %br/
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, autofocus: true, class: "form-control", id: "inputEmail",  placeholder: "Email"
   .field
-    = f.label :password
+    = f.label :password, class: "sr-only"
     %br/
-    = f.password_field :password, autocomplete: "off"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+    = f.password_field :password, autocomplete: "off", class: "form-control", id: "inputPassword", placeholder: "Password"
   .actions
-    = f.submit "Log in"
-= render "users/shared/links"
+    = f.submit "Log in", class: "btn btn-lg btn-primary btn-block"
