@@ -5,7 +5,7 @@
     - if !current_user.rooms.exists?(room)
       .new_rooms
         %p.label.label-success Connect to:
-        = render 'users/my_room', user: current_user, room: room
+        = render 'users/room', user: current_user, room: room
 
     - else
       .rooms
