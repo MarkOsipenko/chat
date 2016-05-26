@@ -35,8 +35,8 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Action Cable endpoint configuration
-  # config.action_cable.url = 'wss://example.com/cable'
-  # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  config.action_cable.url = 'wss://quiet-shelf-64123.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://quiet-shelf-64123.herokuapp.com', /https:\/\/quiet-shelf-64123.herokuapp.com/ ]
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil
