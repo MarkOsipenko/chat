@@ -8,9 +8,7 @@ RSpec.describe "Message Action", type: :request do
   let!(:message) { create :message, user: user, room: room }
 
   describe "message in room" do
-    before do
-      authentication(user)
-    end
+    before { authentication(user) }
 
     it { is_expected.to have_content("My rooms") }
 

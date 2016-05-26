@@ -25,9 +25,7 @@ RSpec.describe "User in rooms", type: :request do
           it { is_expected.not_to have_content("Disconnect from:")}
           it { expect(find(".new_rooms")).to have_link(harrys_room.name) }
         end
-
       end
-
     end
 
     context "creare room" do
