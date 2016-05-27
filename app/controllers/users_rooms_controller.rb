@@ -1,5 +1,6 @@
 class UsersRoomsController < ApplicationController
   before_action :find_room, only: [:create]
+  before_action :all_rooms, only: [:create, :destroy]
   before_action :delete_room, only: [:destroy]
 
   def create
@@ -29,4 +30,7 @@ class UsersRoomsController < ApplicationController
       @room = Room.find(params[:room_id])
     end
 
+    def all_rooms
+      @all_rooms = Room.all
+    end
 end

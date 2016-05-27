@@ -1,1 +1,2 @@
-$("#<%= dom_id(@task) %>").remove();
+$("#my_rooms").html('<%=j render "users/my_rooms", user: current_user %>');
+$("#all_rooms").html('<%=j render "rooms/rooms", rooms: @all_rooms %>');
