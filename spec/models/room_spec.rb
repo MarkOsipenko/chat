@@ -25,4 +25,9 @@ RSpec.describe Room, :type => :model do
       it { expect{ user.rooms << room }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Room has already been taken") }
     end
   end
+
+  context "message dependency" do
+    let!(:message) { create :message, room: room, user: user }
+    it { expect{ room.destroy }.to change(Message, :count).by(-1) }
+  end
 end
