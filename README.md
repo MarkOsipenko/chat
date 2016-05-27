@@ -1,7 +1,7 @@
 # README
 
-<a href="https://codeclimate.com/github/MarkOsipenko/chat"><img src="https://codeclimate.com/github/MarkOsipenko/chat/badges/gpa.svg" /></a>
+[![Code Climate](https://codeclimate.com/github/MarkOsipenko/chat/badges/gpa.svg)](https://codeclimate.com/github/MarkOsipenko/chat)
 
-<a href="https://codeclimate.com/github/MarkOsipenko/chat/coverage"><img src="https://codeclimate.com/github/MarkOsipenko/chat/badges/coverage.svg" /></a>
+[![Coverage](https://codeclimate.com/github/MarkOsipenko/chat/badges/coverage.svg)](https://codeclimate.com/github/MarkOsipenko/chat/coverage)
 
-<a href="https://codeclimate.com/github/MarkOsipenko/chat"><img src="https://codeclimate.com/github/MarkOsipenko/chat/badges/issue_count.svg" /></a>
+[![Issues](https://codeclimate.com/github/MarkOsipenko/chat/badges/issue_count.svg)](https://codeclimate.com/github/MarkOsipenko/chat)
