@@ -17,7 +17,12 @@ RSpec.describe Room, :type => :model do
 
     context "invalid name" do
       let(:invalid_room) { create :room, name: "", owner_id: user.id }
-      it { expect{ invalid_room }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Name can't be blank") } 
+      it { expect{ invalid_room }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Name can't be blank") }
+    end
+
+    context "uniqueness" do
+      before { user.rooms << room }
+      it { expect{ user.rooms << room }.to raise_error(ActiveRecord::RecordInvalid, "Validation failed: Room has already been taken") }
     end
   end
 end
