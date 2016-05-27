@@ -1,0 +1,3 @@
+$("#all_rooms").html('<%=j render "rooms/rooms", rooms: @rooms %>');
+$('input[placeholder="Room name"]').val('');
+$("#my_rooms").html('<%=j render "users/my_rooms", user: current_user %>');
